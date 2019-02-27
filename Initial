@@ -1,0 +1,33 @@
+#include <Fast_LED.h>
+
+#define NUM_LEDS 135
+#define DATA_PIN 11
+
+void setup() {
+  FastLED.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);
+  }
+  
+	
+	
+  void rainbow(int cycles, int speed){
+    if(cycles == 0 ){
+      for(int i = 0; i< NUM_LEDS; i++){
+        leds[i] = Wheel(((i * 256 / NUM_LEDS)) & 255);
+      }
+      FastLED.show();
+    }
+    else{
+      for(int j = 0; j<256*cycles j++){
+        for(int i = 0; i<NUM_LEDS; i++){
+          leds[i] = Wheel(((i * 256 / NUM_LEDS)) & 255);
+        }
+        FastLED.show();
+        delay(3000);  // 3 SECONDS RAINBOW PATTERN
+      }
+    }
+  }
+
+
+
+j
+  
